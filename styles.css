@@ -1,0 +1,479 @@
+/* ------------------ PALETA COCOMIEL ------------------ */
+:root {
+    --color-bg: #fdf8ec;
+    --color-hero: #dfe9d1;
+    --color-panel: #eef4e6;
+    --color-card: #ffffff;
+    --color-primary: #f2c849;
+    --color-primary-dark: #d1a45a;
+    --color-text: #2d2d2d;
+    --color-muted-text: #6c6c6c;
+
+    --radius-lg: 22px;
+    --radius-md: 14px;
+    --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.07);
+    --max-width: 1120px;
+}
+
+/* ------------------ RESET ------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* ------------------ NAV ------------------ */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: #ffffff;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    padding: 0.75rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+.logo-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: contain;
+    display: block;
+}
+
+.logo-imagen {
+    width: 120px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.nav {
+    display: flex;
+    gap: 1.4rem;
+    font-size: 0.9rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--color-muted-text);
+    position: relative;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.25rem;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.2s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* ------------------ LAYOUT ------------------ */
+
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+}
+
+/* ------------------ HERO ------------------ */
+.hero {
+    width: 100vw;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6vw;
+    background: linear-gradient(90deg, #f7e9e9, #fbeeee);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.hero-text {
+    max-width: 45%;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    line-height: 1.05;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 420px;
+    color: #555;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-foto {
+    width: 100%;
+    max-width: 880px;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 0 18px 38px rgba(0,0,0,0.18);
+    object-position: center;
+}
+
+/* ------------------ BOTONES ------------------ */
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-primary,
+.btn-secondary {
+    border-radius: 999px;
+    padding: 0.75rem 1.6rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(242,200,73,0.35);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(242,200,73,0.45);
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: var(--color-primary-dark);
+    border: 1px solid #eadfb7;
+}
+
+.btn-secondary:hover {
+    background-color: #fff9e6;
+}
+
+/* ------------------ SECCIONES ------------------ */
+
+.section {
+    margin-bottom: 3rem;
+}
+
+.section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.section-sub {
+    color: var(--color-muted-text);
+    margin-bottom: 1.5rem;
+}
+
+.section--panel {
+    background-color: var(--color-panel);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.8rem;
+}
+
+/* ------------------ CARDS GENERALES ------------------ */
+
+.cards {
+    display: grid;
+    gap: 1.7rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+    background-color: var(--color-card);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+    margin-bottom: 0.25rem;
+}
+
+.card .price {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.8rem;
+}
+
+.card ul {
+    color: var(--color-muted-text);
+    list-style: disc;
+    margin-left: 1.2rem;
+    font-size: 0.94rem;
+}
+
+/* ------------------ PRODUCTOS / CARRUSEL ------------------ */
+
+#productos {
+    padding: 5rem 0;
+}
+
+#productos h2 {
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+/* Tarjetas de producto/categoría */
+.producto-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 1.8rem 1.5rem 2.3rem;
+    text-align: center;
+    box-shadow: 0 14px 18px rgba(0,0,0,0.05);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 34px rgba(0,0,0,0.12);
+}
+
+.producto-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+
+    /* NUEVO → agrega margen interno */
+    padding: 0.6rem;
+    box-sizing: border-box;  /* para que no se rompa el tamaño */
+
+    background: #fff;  /* opcional: para que el padding sea “blanco” */
+}
+
+.producto-card h3 {
+    margin-bottom: 0.7rem;
+    font-size: 1.35rem;
+}
+
+.producto-card p {
+    color: #666;
+    line-height: 1.55;
+    font-size: 1rem;
+}
+
+/* ---- Carrusel de categorías ---- */
+
+.categorias-carousel {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.5rem 0;
+}
+
+.carousel-arrow {
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    background-color: #ffe8b3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.carousel-arrow:hover {
+    background-color: #ffd870;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.carousel-viewport {
+    overflow: hidden;
+    flex: 1;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+/* Cada slide ocupa 1/3 del ancho visible */
+.categoria-slide {
+    flex: 0 0 calc((100% / 3));
+    /* margin: 0 20px; */
+    /* padding: 0 2.5rem; */
+    box-sizing: border-box;
+}
+
+
+/* Tarjetas dentro del carrusel: sombra más suave */
+.categoria-slide .producto-card {
+    width: 84%;
+    margin: 0 auto;
+} 
+
+/* ------------------ FORM WHATSAPP ------------------ */
+
+.pedido-form {
+    background-color: #ffffff;
+    padding: 1.7rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.pedido-form textarea {
+    width: 100%;
+    background-color: #fffef8;
+    border: 1px solid #e6dba6;
+    border-radius: 14px;
+    padding: 0.8rem;
+    min-height: 110px;
+}
+
+.pedido-form textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(242,200,73,0.35);
+}
+
+/* ------------------ UBICACIÓN ------------------ */
+
+.ubicacion-full {
+    width: 100vw;
+    background-color: #fff4dd;
+    padding: 4rem 6vw;
+    margin-left: -4vw;
+    box-sizing: border-box;
+}
+
+.ubicacion-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+.ubicacion-col h2,
+.ubicacion-col h3 {
+    margin-bottom: 0.6rem;
+}
+
+.ubicacion-col .section-sub {
+    margin-bottom: 1.4rem;
+}
+
+.ubicacion-mapa {
+    margin-top: 1.5rem;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    background: #fff;
+}
+
+.ubicacion-mapa iframe {
+    width: 100%;
+    height: 320px;
+    border: 0;
+}
+
+.contacto-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.contacto-lista li {
+    margin-bottom: 0.5rem;
+    font-size: 0.98rem;
+}
+
+/* ------------------ FOOTER ------------------ */
+
+.footer {
+    border-top: 1px solid rgba(0,0,0,0.05);
+    text-align: center;
+    padding: 1.3rem;
+    color: var(--color-muted-text);
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem 1.5rem;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        height: auto;
+        width: 80%;
+        margin-top: 1.5rem;
+    }
+
+    /* que las flechas no se peguen tanto en mobile */
+    .categorias-carousel {
+        gap: 0.4rem;
+    }
+
+    .categoria-slide {
+        padding: 0 0.25rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .ubicacion-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .ubicacion-full {
+        padding: 3rem 1.5rem;
+    }
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cocomiel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confitería del barrio con facturas, tartas y combos para trabajadores y vecinos en Bahía Blanca. Pedidos por WhatsApp.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+    <header class="topbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo de Cocomiel Confitería" class="logo-icon">
+            <!-- <span class="logo-text">COCOMIEL · Confitería</span> -->
+        </div>
+        <nav class="nav">
+            <!-- <a href="#combos">Combos</a> -->
+            <a href="#productos">Productos</a>
+            <a href="#pedidos">Pedidos</a>
+            <a href="#ubicacion">Ubicación</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Facturas, tartas y café para el laburo y el barrio</h1>
+            <p>
+                Ideal para los que salen de la obra, los que vuelven del trabajo o los vecinos 
+                que quieren algo rico sin complicarse.
+            </p>
+            <button class="btn-primary btn-whatsapp"
+                    data-mensaje="Hola, quiero hacer un pedido general para retirar por la confitería.">
+                Pedir por WhatsApp
+            </button>
+        </div>
+    
+        <div class="hero-image">
+            <img src="assets/local-frente.jpeg" alt="COCOMIEL Confitería" class="hero-foto">
+        </div>
+    </section>
+
+    <main>
+        <!-- PRODUCTOS -->
+        <section id="productos" class="section muted">
+            <h2>NUESTRAS DELICIAS</h2>
+
+            <!-- Carrusel de categorías -->
+            <div class="categorias-carousel">
+                <button class="carousel-arrow arrow-left" id="cat-arrow-left" aria-label="Categoría anterior">
+                    &#10094;
+                </button>
+
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="categorias-track">
+                        <!-- 5 categorías como slides del carrusel -->
+                        <article class="producto-card categoria-slide" data-category="facturas">
+                            <img src="assets/prod-fact-coco.jpeg" alt="Facturas" class="producto-img">
+                            <h3>Facturas</h3>
+                            <p>Medialunas, vigilantes, cañoncitos y más. Frescas y pensadas para la jornada de trabajo.</p>
+                        </article>
+                
+                        <article class="producto-card categoria-slide" data-category="tartas">
+                            <img src="assets/prod-torta-coco.jpeg" alt="Tartas y tortas" class="producto-img">
+                            <h3>Tartas y tortas</h3>
+                            <p>Opciones clásicas para cumpleaños, reuniones o una merienda power en casa.</p>
+                        </article>
+                
+                        <article class="producto-card categoria-slide" data-category="budines">
+                            <img src="assets/prod-budines.png" alt="Budines y panificados" class="producto-img">
+                            <h3>Budines y panificados</h3>
+                            <p>Ideales para compartir en la oficina, la obra o con mates en el barrio.</p>
+                        </article>
+                
+                        <article class="producto-card categoria-slide" data-category="postres">
+                            <img src="assets/prod-postres-coco.jpeg" alt="Postres" class="producto-img">
+                            <h3>Postres</h3>
+                            <p>Porciones dulces y postres para cerrar el día con algo rico.</p>
+                        </article>
+
+                        <article class="producto-card categoria-slide" data-category="masas-secas">
+                            <img src="assets/prod-galletas-coco.jpeg" alt="Masas secas" class="producto-img">
+                            <h3>Masas secas</h3>
+                            <p>Para la bandeja de la tarde, el cafecito o llevar de regalo.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <button class="carousel-arrow arrow-right" id="cat-arrow-right" aria-label="Siguiente categoría">
+                    &#10095;
+                </button>
+            </div>
+        </section>
+
+        <!-- PEDIDOS -->
+        <section id="pedidos" class="section">
+            <h2>Hacé tu pedido por WhatsApp</h2>
+            <p class="section-sub">
+                Nos mandás un mensaje, coordinamos horario y lo pasás a retirar. Simple.
+            </p>
+
+            <form class="pedido-form">
+                <label for="mensaje">
+                    Escribí tu pedido o consulta:
+                </label>
+                <textarea id="mensaje" rows="4" placeholder="Ej: Quiero 1 docena de facturas para las 11:30."></textarea>
+
+                <button type="button" class="btn-primary btn-whatsapp-form">
+                    Enviar por WhatsApp
+                </button>
+
+                <p class="small">
+                    También podés escribirnos directo:
+                    <strong>+54 291 502-1177</strong>  
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <section id="ubicacion" class="ubicacion-full">
+        <div class="ubicacion-inner">
+            <!-- COLUMNA 1: HORARIOS + DIRECCIÓN + MAPA -->
+            <div class="ubicacion-col ubicacion-info">
+                <h2>¿Dónde estamos?</h2>
+                <p class="section-sub">
+                    Zona Bahía Blanca, frente al CODIMAT. Ideal para los que trabajan por acá 
+                    y para los vecinos del barrio.
+                </p>
+
+                <p><strong>Dirección:</strong> Avellaneda 1353, Bahía Blanca, Buenos Aires</p>
+                <p><strong>Horario:</strong> Martes a Domingo · 08:00 a 20:00 horaria de corrido</p>
+
+                <div class="ubicacion-mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.0100172042917!2d-62.29584269999997!3d-38.717579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95edbc9d1c62c689%3A0xf60cb07fd8be0c7d!2sAvellaneda%201353%2C%20B8000BBA%20Bah%C3%ADa%20Blanca%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1763127724829!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- COLUMNA 2: CONTACTO -->
+            <div class="ubicacion-col ubicacion-contacto">
+                <h3>Contacto</h3>
+                <p class="section-sub">
+                    Hacenos tu consulta, reservá una torta o encargá algo dulce para el trabajo.
+                </p>
+
+                <ul class="contacto-lista">
+                    <li><strong>Teléfono:</strong> 9 291 502-1177</li>
+                    <li><strong>WhatsApp:</strong> +54 9 291 502-1177</li>
+                    <li><strong>Instagram:</strong> confiteria.cocomiel</li>
+                </ul>
+
+                <button class="btn-primary btn-whatsapp"
+                        data-mensaje="Hola, quiero hacer una consulta sobre los productos de Cocomiel.">
+                    Escribinos por WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© <span id="anio"></span> COCOMIEL · Bahía Blanca</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
