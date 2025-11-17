@@ -471,9 +471,16 @@ button {
 @media (max-width: 900px) {
     .ubicacion-inner {
         grid-template-columns: 1fr;
+
+    }
+
+    .hero-foto {
+        max-width: 600px;
+        height: 320px;
     }
 
     .ubicacion-full {
         padding: 3rem 1.5rem;
     }
 }
+
